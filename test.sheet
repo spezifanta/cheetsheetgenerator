@@ -1,0 +1,14 @@
+title: Test Cheet Sheet
+
+sections:
+  -
+    title: Vim Commands
+    keys:
+      a: inserst at beginning
+      d: delete line
+      '<leader>e': opens NERDTree
+  -
+    title: Git
+    keys:
+      'git pull --rebase': Pro skillz needed
+      'git stash save -u foobar':  Save all files as 'foobar' stash

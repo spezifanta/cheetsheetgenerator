@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>{{ sheet.title }}</title>
+    <style>
+      section {
+        border: 1px solid #59A1D4;
+        margin-bottom: 10px;
+        font-family: monospace;
+      }
+
+      section h2 {
+        background: #59A1D4;
+        color: white;
+        margin-top: 0;
+        padding: 5px 10px;
+      }
+
+      dl {
+        margin: 0 5px;
+      }
+
+      dt {
+        font-weight: 700;
+        display: inline-block;
+        min-width: 100px;
+        margin-bottom: 5px;
+      }
+
+      dd {
+        display: inline;
+        margin: 0;
+      }
+
+      dd:after{
+        display: block;
+        content: '';
+      }
+
+      dd:nth-of-type(odd) {
+        background: #e7e7e7;
+      }
+
+      dd:nth-of-type(even) {
+        background: #f7f7f7;
+      }
+    </style>
+  </head>
+
+  <body>
+    {% for section in sheet.sections %}
+      <section>
+        <h2>{{ section.title }}</h2>
+
+        <dl>
+          {% for key, value in section['keys'].items() %}
+            <dt>
+              {{ key|e }}
+            </dt>
+            <dd>
+              {{ value }}
+            </dd>
+          {% endfor %}
+        </dl>
+      </section>
+    {% endfor %}
+  </body>
+</html>
